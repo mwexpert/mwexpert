@@ -20,12 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c9t6b#r7v3ih1e2h=)ad!3y^vv2lg-w$#md+8()1))q6avdot8'
+SECRET_KEY = os.environ.get('django-insecure-c9t6b#r7v3ih1e2h=)ad!3y^vv2lg-w$#md+8()1))q6avdot8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['www.mwexpert.com', 'mwexpert.com']
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
 
 # Application definition
 
@@ -75,10 +77,12 @@ WSGI_APPLICATION = 'mwsolutions.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(
+        default='postgresql://waqasshami92:VxfAWTaZlqdpMlHHlOda0wQS91ID0z63@dpg-d003n8ngi27c73atcbo0-a.virginia-postgres.render.com/mwexpert',
+        conn_max_age=600,  # Connection reuse for performance
+        ssl_require=True  # Ensures SSL is used for security (Render requires this)
+    )
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
