@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - MW Experts Financial Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Hero section for Pricing Page */
+    .welcome-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .welcome-hero img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .welcome-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .welcome-content {
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content p {
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+
+    .pricing-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .pricing-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-description {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .pricing-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .pricing-box h3 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .pricing-box p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-box .price {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .pricing-box .price span {
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    .pricing-box ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .pricing-box ul li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .pricing-box ul li:before {
+      content: '✔';
+      color: #2ecc71;
+      margin-right: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #3498db;
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo" />
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <div class="welcome-overlay"></div>
+  <img src="{% static 'images/pricing.jpg' %}" alt="Pricing Background">
+  <div class="welcome-content">
+    <h1>Our Pricing Plans</h1>
+    <p>Tailored Financial Services for Every Business Need</p>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <div class="pricing-container">
+    <h2>Choose Your Plan</h2>
+    <p class="pricing-description">
+      At MW Experts, we offer flexible pricing plans to suit businesses of all sizes. Whether you are a startup or an established enterprise, we have a package for you.
+    </p>
+
+    <div class="pricing-grid">
+      <div class="pricing-box">
+        <h3>Basic Plan - Support Growth Plan - Essential Financial Support</h3>
+        <p>Perfect for small businesses just starting out.</p>
+        <div class="price">BHD150 <span>/month</span></div>
+        <ul>
+          <li>Bookkeeping & Accounting</li>
+          <li>Monthly Reports</li>
+          <li>1 Tax Filing</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+
+      <div class="pricing-box">
+        <h3>Standard Plan - Advanced Financial Management</h3>
+        <p>Ideal for growing businesses needing more support.</p>
+        <div class="price">BHD300 <span>/month</span></div>
+        <ul>
+          <li>Everything in Basic Plan</li>
+          <li>Financial Reporting & payroll management</li>
+          <li>Tax Filing & Planning</li>
+          <li>Full bookkeeping & cashflow monitoring</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+
+      <div class="pricing-box">
+        <h3>Premium Plan - Full Financial Strategy & Advisory</h3>
+        <p>Comprehensive support for established businesses.</p>
+        <div class="price">Custom pricing based on your needs</div>
+        <ul>
+          <li>Everything in Standard Plan</li>
+          <li>Full CFO Services & business strategy planning</li>
+          <li>Handles risk management, financial controls & tax strategy</li>
+          <li>Full financial coordination & reporting</li>
+          <li>Daily financial operations & bookkeeping</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

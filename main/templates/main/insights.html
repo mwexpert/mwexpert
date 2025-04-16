@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights - MW Experts</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      padding: 15px 20px;
+      color: #0a2a43;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo-text {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0a2a43;
+    }
+
+    .nav-links a {
+      color: #0a2a43;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007BFF;
+    }
+
+    .insights-hero {
+      position: relative;
+      background-image: url("{% static 'images/insights.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      padding: 120px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .insights-hero h1,
+    .insights-hero p {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .insights-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation-delay: 0.3s;
+    }
+
+    .insights-hero p {
+      font-size: 1.2rem;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    .training-programs {
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+
+    .training-programs h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #0a2a43;
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .training-card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 25px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .training-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .training-card h3 {
+      font-size: 1.2rem;
+      color: #0a2a43;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .training-card ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: justify;
+    }
+
+    .training-card ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .insights-hero h1 {
+        font-size: 2.2rem;
+      }
+      .insights-hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="insights-hero">
+  <h1>Insights & Training Programs</h1>
+  <p>Empowering future finance leaders through tailored training</p>
+</section>
+
+<!-- Training Programs -->
+<section class="training-programs">
+  <h2>Our Training Programs</h2>
+  <div class="training-grid">
+    <!-- Training Card 1 -->
+    <div class="training-card">
+      <h3>🎓 Graduate Training Program (GTP)</h3>
+      <ul>
+        <li>🎯 Fresh graduates in accounting, finance, or business</li>
+        <li>🕒 6–12 months (Rotational)</li>
+        <li>📘 Bookkeeping, reporting, VAT & Zakat</li>
+        <li>🏢 Real-world client accounting exposure</li>
+        <li>👥 Mentorship from senior controllers</li>
+        <li>🌟 <strong>Outcome:</strong> Possible full-time offer</li>
+      </ul>
+    </div>
+
+    <!-- Training Card 2 -->
+    <div class="training-card">
+      <h3>💼 Virtual CFO Training</h3>
+      <ul>
+        <li>🎯 Mid-career finance professionals</li>
+        <li>🕒 3–6 months</li>
+        <li>📘 Forecasting, budgeting, investment planning</li>
+        <li>📊 Cost optimization case studies</li>
+        <li>🤝 Sessions with CFO-level experts</li>
+        <li>🌟 <strong>Outcome:</strong> Enhanced leadership path</li>
+      </ul>
+    </div>
+
+    <!-- Training Card 3 -->
+    <div class="training-card">
+      <h3>📊 Financial Consulting & Advisory</h3>
+      <ul>
+        <li>🎯 Junior accountants, analysts, MBA students</li>
+        <li>🕒 2–4 months</li>
+        <li>📘 Feasibility studies, valuation, M&A</li>
+        <li>📊 Planning & consulting methodology</li>
+        <li>🌟 <strong>Outcome:</strong> Skills for consulting roles</li>
+      </ul>
+    </div>
+
+    <!-- Training Card 4 -->
+    <div class="training-card">
+      <h3>📚 Taxation & Compliance Masterclass</h3>
+      <ul>
+        <li>🎯 Tax professionals & finance officers</li>
+        <li>🕒 3 months (Online & In-person)</li>
+        <li>📘 VAT, Zakat, WHT training</li>
+        <li>📚 Case studies & interactive sessions</li>
+        <li>📄 Certification upon completion</li>
+        <li>🌟 <strong>Outcome:</strong> Become compliance experts</li>
+      </ul>
+    </div>
+
+    <!-- Training Card 5 -->
+    <div class="training-card">
+      <h3>🎓 Internship Program</h3>
+      <ul>
+        <li>🎯 University students or recent grads</li>
+        <li>🕒 3–6 months (Paid/Unpaid)</li>
+        <li>📘 Learn accounting software (SAP, Xero, etc.)</li>
+        <li>🧾 Audit, risk assessment experience</li>
+        <li>🌍 Industries: Retail, Law, Real Estate</li>
+        <li>🌟 <strong>Outcome:</strong> Job-ready experience</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

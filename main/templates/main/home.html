@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MW Experts Financial Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+                <span class="logo-text">MW Experts Financial Consulting</span>
+            </a>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'industries' %}">Industries</a>
+                <a href="{% url 'why_us' %}">Why Us</a>
+                <a href="{% url 'testimonials' %}">Testimonials</a>
+                <a href="{% url 'careers' %}">Careers</a>
+                <a href="{% url 'insights' %}">Insights</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'pricing' %}">Pricing</a>
+                <a href="{% url 'faqs' %}">FAQs</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="welcome-hero">
+        <div class="background-img">
+            <img src="{% static 'images/background.jpg' %}" alt="Background">
+        </div>
+        <div class="welcome-overlay"></div>
+
+        <div class="welcome-content white-box fade-in">
+            <h1>Welcome to Manage Work Experts Financial Consultancy</h1>
+            <p class="welcome-subtitle">Your Trusted Financial Consulting Partner</p>
+            <a href="{% url 'about' %}" class="learn-more-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- CEO Message -->
+    <div class="about-container">
+        <div class="about-text">
+            <h2>CEO's Message</h2>
+            <p class="justified">
+                At MW Experts, our journey has always been about creating real value—both for the businesses we serve and the people behind them. Over the years, we’ve had the privilege of working with startups chasing big dreams and established companies navigating complex challenges. In every case, our goal remains the same: to bring clarity, structure, and strategy to their financial landscape.
+                <br><br>
+                We understand that no two businesses are alike. That’s why we approach each client with fresh eyes, listening closely, asking the right questions, and crafting solutions that truly fit. Whether it’s basic bookkeeping or long-term financial strategy, we stand by our clients as trusted partners—not just service providers.
+                <br><br>
+                Our strength lies in our people. I’m proud of the team we’ve built—professionals with deep experience, a strong sense of responsibility, and a genuine passion for helping businesses grow. We’re also equally proud of our commitment to developing young talent and keeping our clients informed in a world that’s changing fast.
+                <br><br>
+                Thank you for taking the time to learn more about MW Experts. We look forward to the opportunity to work with you—and to contribute meaningfully to your business journey.
+            </p>
+            <div class="signature">
+                <strong>Warm regards,</strong><br>
+                <strong>Muhammad Waqas, CMA, CSCA, CFE</strong><br>
+                <em>CEO, MW Experts</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+    </footer>
+</body>
+
+</html>

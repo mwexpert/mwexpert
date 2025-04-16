@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - MW Experts Financial Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Hero section with centered fade-in */
+    .welcome-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .welcome-hero img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .welcome-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .welcome-content {
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content p {
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Services grid */
+    .services-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .services-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .services-description {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .service-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .service-box ul {
+      padding-left: 20px;
+    }
+
+    .service-box ul li {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo" />
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <div class="welcome-overlay"></div>
+  <img src="{% static 'images/services.jpg' %}" alt="Services Background">
+  <div class="welcome-content">
+    <h1>Our Services</h1>
+    <p>Empowering Your Finances with Expertise and Precision</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="services-container">
+    <h2>What We Offer</h2>
+    <p class="services-description">
+      At MW Experts, we provide a comprehensive suite of financial services tailored to meet the needs of growing businesses. From bookkeeping to financial strategy, we help you gain control, insight, and confidence in your finances.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>Bookkeeping & Accounting</h3>
+        <ul>
+          <li>Accurate and timely bookkeeping</li>
+          <li>Month-end and year-end closings</li>
+          <li>General ledger maintenance</li>
+          <li>Bank and credit card reconciliations</li>
+          <li>Financial statement preparation</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h3>Financial Reporting</h3>
+        <ul>
+          <li>Custom management reports</li>
+          <li>Profit & loss analysis</li>
+          <li>Cash flow and balance sheet reports</li>
+          <li>Budget vs actual comparisons</li>
+          <li>KPI dashboards</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h3>Tax, Zakat & Withholding VAT Compliance</h3>
+        <ul>
+          <li>VAT registration and filing (Bahrain and KSA)</li>
+          <li>Corporate and income tax filings</li>
+          <li>Zakat calculation, submission and withholding tax reporting (KSA)</li>
+          <li>Tax advisory and planning</li>
+          <li>Ensuring audit readiness</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h3>Payroll Management</h3>
+        <ul>
+          <li>Monthly payroll processing</li>
+          <li>Salary slips and payroll reports</li>
+          <li>Compliance with labor laws</li>
+          <li>Leave and gratuity tracking</li>
+          <li>End-of-service benefit calculations</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h3>CFO & Advisory Services</h3>
+        <ul>
+          <li>Financial forecasting & modeling</li>
+          <li>Business performance analysis</li>
+          <li>Budgeting and strategic planning</li>
+          <li>Investor reporting support</li>
+          <li>Business expansion and M&A guidance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

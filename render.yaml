@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: mwsolutions
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn mwsolutions.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mwsolutions.settings
+      - key: SECRET_KEY
+        value: "django-insecure-c9t6b#r7v3ih1e2h=)ad!3y^vv2lg-w$#md+8()1))q6avdot8"
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "mwexpert.com,www.mwexpert.com"
+    autoDeploy: true
+    runtime: python
+    branch: main

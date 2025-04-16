@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Us - MW Experts Financial Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo" />
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <div class="welcome-overlay"></div>
+  <div class="background-img">
+    <img src="{% static 'images/whyus.jpg' %}" alt="Why Us Background">
+  </div>
+  <div class="welcome-content fade-in">
+    <h1>Why Choose MW Experts</h1>
+    <p class="welcome-subtitle">We're not just accountants—we're partners in your growth.</p>
+  </div>
+</section>
+
+<!-- Why Us Section -->
+<div class="about-container">
+  <div class="about-text">
+    <h2>What Makes Us Different</h2>
+    <p class="justified">
+      At MW Experts, we go beyond traditional accounting services. Our team brings hands-on experience, strategic insight, and a commitment to client success—making us a trusted financial partner for businesses across industries.
+    </p>
+
+    <!-- Box 1: Research-Driven Advisory -->
+    <div class="industry-box">
+      <h3>Research-Driven Advisory</h3>
+      <p>
+        Our dedicated research wing continuously monitors industry trends, new regulations, and policy changes. This allows us to keep both our clients and our internal teams up to date, ensuring your business stays ahead, compliant, and well-informed at all times.
+      </p>
+    </div>
+
+    <!-- Box 2: Client Representation & Escalation Support -->
+    <div class="industry-box">
+      <h3>Client Representation & Escalation Support</h3>
+      <p>
+        We don’t just advise—we step in and represent you when needed. Whether in meetings with banks, auditors, or regulators, our team stands by your side. We also offer a clear escalation channel, ensuring any client concern is promptly addressed by senior leadership.
+      </p>
+    </div>
+
+    <!-- Box 3: On-Ground, Human-Centered Support -->
+    <div class="industry-box">
+      <h3>On-Ground, Human-Centered Support</h3>
+      <p>
+        We’re not just an online service. Our professionals are physically available to meet with clients, attend site visits, and respond to concerns in person. We believe that face-to-face interaction strengthens trust, improves communication, and drives better outcomes.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

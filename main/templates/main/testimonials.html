@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - MW Experts Financial Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+            <span class="logo-text">MW Experts Financial Consulting</span>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'industries' %}">Industries</a>
+            <a href="{% url 'why_us' %}">Why Us</a>
+            <a href="{% url 'testimonials' %}">Testimonials</a>
+            <a href="{% url 'careers' %}">Careers</a>
+            <a href="{% url 'insights' %}">Insights</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'pricing' %}">Pricing</a>
+            <a href="{% url 'faqs' %}">FAQs</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+    <div class="background-img">
+        <img src="{% static 'images/testimonials.jpg' %}" alt="Testimonials Background">
+    </div>
+    <div class="welcome-overlay"></div>
+    <div class="welcome-content white-box fade-in">
+        <h1>Client Testimonials</h1>
+        <p class="welcome-subtitle">What Our Clients Say About Us</p>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-container">
+    <h2 class="testimonials-title">Hear From Our Partners</h2>
+
+    <div class="testimonial-box">
+        <div class="testimonial-name">CEO - New Vision Group</div>
+        <div class="testimonial-role">Corporate Client</div>
+        <p class="testimonial-text">
+            "MW Experts transformed our financial operations. Their team is highly professional, ensuring our books are always accurate and up to date. Their strategic advice has helped us cut costs and improve profitability significantly!"
+        </p>
+    </div>
+
+    <div class="testimonial-box">
+        <div class="testimonial-name">CEO - Rose Leaf Bahrain</div>
+        <div class="testimonial-role">Startup Client</div>
+        <p class="testimonial-text">
+            "As a startup, we needed a financial partner who could guide us through budgeting, forecasting, and compliance. MW Experts provided the expertise we lacked and helped us build a solid financial foundation. Highly recommended!"
+        </p>
+    </div>
+
+    <div class="testimonial-box">
+        <div class="testimonial-name">Managing Partner - Law Firm, Bahrain</div>
+        <div class="testimonial-role">Legal Client</div>
+        <p class="testimonial-text">
+            "Navigating VAT and Zakat compliance in the GCC can be challenging, but MW Experts made the process effortless. Their proactive approach saved us from costly penalties and improved our tax efficiency!"
+        </p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

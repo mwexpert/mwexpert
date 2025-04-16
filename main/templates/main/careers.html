@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - MW Experts Financial Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            color: #0a2a43;
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            color: #0a2a43;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .career-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .career-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .career-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .career-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px;
+        }
+
+        .career-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .career-content p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .career-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .career-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            color: #fff;
+            width: 260px;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .career-btn .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .career-btn.whatsapp {
+            background-color: #25D366;
+        }
+
+        .career-btn.email {
+            background-color: #007BFF;
+        }
+
+        .career-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a2a43;
+            color: white;
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .career-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+            <span class="logo-text">MW Experts Financial Consulting</span>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'industries' %}">Industries</a>
+            <a href="{% url 'why_us' %}">Why Us</a>
+            <a href="{% url 'testimonials' %}">Testimonials</a>
+            <a href="{% url 'careers' %}">Careers</a>
+            <a href="{% url 'insights' %}">Insights</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'pricing' %}">Pricing</a>
+            <a href="{% url 'faqs' %}">FAQs</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Careers Hero Section -->
+<section class="career-hero">
+    <div class="career-overlay"></div>
+    <img src="{% static 'images/careers.jpg' %}" alt="Careers Background">
+    <div class="career-content fade-in">
+        <h1>Join Our Team</h1>
+        <p>We’re always looking for talented professionals to grow with us.</p>
+        <p>Send your CV via WhatsApp or Email:</p>
+
+        <div class="career-buttons">
+            <a href="https://wa.me/97339591881" class="career-btn whatsapp" target="_blank">
+                <img src="{% static 'images/whatsapp-icon.png' %}" alt="WhatsApp" class="icon">
+                Send CV via WhatsApp
+            </a>
+
+            <a href="mailto:mwexperts@gmail.com" class="career-btn email">
+                <img src="{% static 'images/email-icon.png' %}" alt="Email" class="icon">
+                Send CV via Email
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

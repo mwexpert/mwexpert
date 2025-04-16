@@ -1,0 +1,349 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Sticky Navbar */
+.navbar {
+    background-color: white;
+    padding: 1rem;
+    color: #000000;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.welcome-hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+}
+
+.background-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%) blur(2px);
+    z-index: 1;
+}
+
+.welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    z-index: 2;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.learn-more-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #e6b800;
+}
+
+/* About and CEO Section */
+.about-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00264d;
+}
+
+.about-bullets {
+    list-style-type: disc;
+    padding-left: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.about-text p.justified {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.signature {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #444;
+}
+
+/* Testimonials Section */
+.testimonials-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.testimonial-box {
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+}
+
+.testimonial-box:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.testimonial-role {
+    font-style: italic;
+    color: #555;
+}
+
+/* Services & Industries Columns */
+.services-industries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.industry-box {
+    flex: 1 1 calc(50% - 30px);
+    border: 1px solid #d1d1d1;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.industry-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.industry-box h3 {
+    font-size: 22px;
+    color: #004080;
+    margin-bottom: 15px;
+    border-left: 5px solid #007bff;
+    padding-left: 12px;
+}
+
+.industry-box ul,
+.industry-box p {
+    padding-left: 20px;
+    list-style-type: disc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.industry-box li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #00264d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Layouts */
+@media (max-width: 768px) {
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    .about-container {
+        padding: 1rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .services-industries {
+        flex-direction: column;
+    }
+
+    .industry-box {
+        flex: 1 1 100%;
+    }
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+}
+static/
+├── css/
+│   └── careers.css
+└── images/
+    └── careers.jpg

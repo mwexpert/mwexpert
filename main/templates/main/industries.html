@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Industries - MW Experts Financial Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Hero section with centered fade-in */
+    .welcome-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .welcome-hero img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .welcome-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .welcome-content {
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content p {
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Industries grid */
+    .industries-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+
+    .industries-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .industries-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .industries-description {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .industry-box {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .industry-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .industry-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .industry-box ul {
+      padding-left: 20px;
+    }
+
+    .industry-box ul li {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo" />
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <div class="welcome-overlay"></div>
+  <img src="{% static 'images/industries.jpg' %}" alt="Industries Background">
+  <div class="welcome-content">
+    <h1>Industries We Serve</h1>
+    <p class="welcome-subtitle">Tailored Financial Solutions Backed by Experience</p>
+  </div>
+</section>
+
+<!-- Industries Section -->
+<section class="industries-section">
+  <div class="industries-container">
+    <h2>Industries We Serve</h2>
+    <p class="industries-description">
+      At MW Experts, we understand that each industry has its own financial dynamics, compliance requirements, and strategic goals. That’s why we don’t offer one-size-fits-all solutions—we provide tailored financial services backed by industry-specific knowledge and over 20 years of hands-on experience.
+    </p>
+    <p class="industries-description">
+      From day-to-day accounting to complex financial planning, we partner with businesses to bring clarity, compliance, and confidence to their financial operations.
+    </p>
+
+    <div class="industries-grid">
+      <div class="industry-box">
+        <h3><i class="fas fa-store"></i> Retail</h3>
+        <ul>
+          <li>Inventory-linked accounting</li>
+          <li>Sales tax/VAT compliance</li>
+          <li>Store-level profitability analysis</li>
+          <li>POS system integration and reporting</li>
+          <li>Cost optimization and expansion planning</li>
+        </ul>
+      </div>
+
+      <div class="industry-box">
+        <h3><i class="fas fa-hotel"></i> Hospitality and Hotels</h3>
+        <ul>
+          <li>Room revenue & occupancy reporting</li>
+          <li>Payroll and cost center control</li>
+          <li>Vendor and procurement tracking</li>
+          <li>Cash flow forecasting</li>
+          <li>Financial modeling for management contracts or expansions</li>
+        </ul>
+      </div>
+
+      <div class="industry-box">
+        <h3><i class="fas fa-utensils"></i> Restaurants and Cafés</h3>
+        <ul>
+          <li>Daily sales & expense tracking</li>
+          <li>Recipe costing & food cost analysis</li>
+          <li>Supplier/vendor reconciliation</li>
+          <li>VAT filing and compliance</li>
+          <li>Break-even and outlet performance reports</li>
+        </ul>
+      </div>
+
+      <div class="industry-box">
+        <h3><i class="fas fa-building"></i> Real Estate & Property Management</h3>
+        <ul>
+          <li>Rent collection tracking & lease management</li>
+          <li>Service charge accounting</li>
+          <li>Financial statements for each property/project</li>
+          <li>Asset & depreciation management</li>
+          <li>Budgeting for property maintenance and CAPEX</li>
+        </ul>
+      </div>
+
+      <div class="industry-box">
+        <h3><i class="fas fa-briefcase"></i> Professional Services</h3>
+        <ul>
+          <li>Project-based accounting</li>
+          <li>Staff billing, time sheets & productivity analysis</li>
+          <li>Profitability and resource utilization</li>
+          <li>Retainer, contract, and milestone billing support</li>
+          <li>VAT and withholding compliance</li>
+        </ul>
+      </div>
+
+      <div class="industry-box">
+        <h3><i class="fas fa-boxes"></i> General & Wholesale Trading</h3>
+        <ul>
+          <li>Inventory accounting and margin tracking</li>
+          <li>Multi-location and multi-currency reporting</li>
+          <li>Cost of goods sold (COGS) tracking</li>
+          <li>Vendor reconciliation and management</li>
+          <li>Financial statements for regulatory reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

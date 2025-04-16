@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MW Experts Financial Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'index' %}" class="logo">
+            <div class="logo">
+                <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+                <span class="logo-text">MW Experts Financial Consulting</span>
+            </div>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'industries' %}">Industries</a>
+                <a href="{% url 'why_us' %}">Why Us</a>
+                <a href="{% url 'testimonials' %}">Testimonials</a>
+                <a href="{% url 'careers' %}">Careers</a>
+                <a href="{% url 'insights' %}">Insights</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'pricing' %}">Pricing</a>
+                <a href="{% url 'faqs' %}">FAQs</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Matching Home -->
+    <section class="welcome-hero">
+        <div class="background-img">
+            <img src="{% static 'images/about.jpg' %}" alt="About Background">
+        </div>
+        <div class="welcome-overlay"></div>
+
+        <div class="welcome-content white-box fade-in">
+            <h1>About MW Experts</h1>
+            <p class="welcome-subtitle">Over 20 Years of Financial Excellence</p>
+            <a href="{% url 'services' %}" class="learn-more-btn">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- About Section (Styled Like CEO Message) -->
+    <div class="about-container">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <ul class="about-bullets">
+                <li>At MW Experts, we are a team of seasoned finance professionals with over 20 years of experience in helping both established companies and startups succeed across various industries—including Retail, Hospitality, Restaurants, General Trading, Real Estate, and Law Firms.</li>
+
+                <li>We specialize in delivering end-to-end financial solutions, from basic bookkeeping and tax compliance to advanced financial policy development, strategic planning, and implementation.</li>
+
+                <li>Our services are designed to ensure full compliance with both internal controls and external regulatory requirements, empowering businesses to operate with confidence and clarity.</li>
+
+                <li>We have successfully supported numerous companies in their financial transformation journeys, helping them optimize resource usage, improve efficiency, and build sustainable financial strategies that drive growth.</li>
+
+                <li>With a structured team approach—including CFOs, Financial Controllers, Coordinators, and Staff Accountants—MW Experts provides tailored solutions that combine deep industry insight, practical execution, and strategic foresight.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+    </footer>
+</body>
+
+</html>

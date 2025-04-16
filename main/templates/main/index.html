@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MW Experts - One Team for All Your Accounting Needs</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #003366; /* Dark blue */
+        }
+
+        .nav-links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #003366; /* Dark blue */
+            font-weight: 500;
+        }
+
+        .landing-hero {
+            display: flex;
+            min-height: 100vh;
+            color: #003366; /* Dark blue text for hero section */
+        }
+
+        .hero-left {
+            background-color: white;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .hero-left-content {
+            max-width: 500px;
+        }
+
+        .hero-left h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #003366; /* Dark blue */
+        }
+
+        .hero-left p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #003366; /* Dark blue */
+        }
+
+        .hero-left a {
+            padding: 12px 25px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .hero-right {
+            flex: 1;
+        }
+
+        .hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+                <span class="logo-text">MW Experts Financial Consulting</span>
+            </a>
+            <div class="nav-links">
+               <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'industries' %}">Industries</a>
+                <a href="{% url 'why_us' %}">Why Us</a>
+                <a href="{% url 'testimonials' %}">Testimonials</a>
+                <a href="{% url 'careers' %}">Careers</a>
+                <a href="{% url 'insights' %}">Insights</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'pricing' %}">Pricing</a>
+                <a href="{% url 'faqs' %}">FAQs</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="landing-hero">
+        <div class="hero-left">
+            <div class="hero-left-content">
+                <h1>One team for all your accounting needs</h1>
+                <p>Bookkeeping, CFO, and tax services for startups and small businesses.</p>
+                <a href="{% url 'contact' %}">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="{% static 'images/pic.jpg' %}" alt="MW Experts Services">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

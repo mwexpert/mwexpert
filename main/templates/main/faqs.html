@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs - MW Experts Financial Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .welcome-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .welcome-hero img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .welcome-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .welcome-content {
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content p {
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 25px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .faq-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .faq-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="{% url 'index' %}" class="logo">
+      <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo" />
+      <span class="logo-text">MW Experts Financial Consulting</span>
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'industries' %}">Industries</a>
+      <a href="{% url 'why_us' %}">Why Us</a>
+      <a href="{% url 'testimonials' %}">Testimonials</a>
+      <a href="{% url 'careers' %}">Careers</a>
+      <a href="{% url 'insights' %}">Insights</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'faqs' %}">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <div class="welcome-overlay"></div>
+  <img src="{% static 'images/faqs.jpg' %}" alt="FAQs Background">
+  <div class="welcome-content">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about our services</p>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="faq-container">
+    <h2>FAQs</h2>
+
+    <div class="faq-item">
+      <h3>What types of businesses do you serve?</h3>
+      <p>We work with startups, SMEs, and large enterprises across various industries including healthcare, retail, logistics, and more.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Are your services customizable?</h3>
+      <p>Yes, our services are fully customizable to meet the unique needs and goals of your business.</p>
+    </div>
+
+    <div class="faq-item">
+  <h3>How do I get started?</h3>
+  <p>
+    You can reach out through our <a href="{% url 'contact' %}">Contact page</a> or
+    <a href="https://wa.me/97339591881" target="_blank">WhatsApp us directly</a>.
+    We'll schedule a free consultation to discuss your needs.
+  </p>
+</div>
+
+
+    <div class="faq-item">
+      <h3>Do you offer international services?</h3>
+      <p>Absolutely! We provide virtual financial consulting services to clients in the GCC and beyond.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What makes MW Experts different?</h3>
+      <p>Our deep industry experience, personalized solutions, and commitment to long-term client success set us apart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>

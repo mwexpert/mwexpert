@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MW Experts</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            color: #0a2a43;
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            color: #0a2a43;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .contact-hero {
+            position: relative;
+            text-align: center;
+            background-image: url("{% static 'images/contact.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .outlined-text {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            transform: translateY(30px);
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .contact-hero p.outlined-text {
+            font-size: 1.2rem;
+            font-weight: 300;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: #0a2a43;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-box img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box a {
+            text-decoration: none;
+            color: #0a2a43;
+            font-weight: 500;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a2a43;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .outlined-text {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
+            <span class="logo-text">MW Experts Financial Consulting</span>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'industries' %}">Industries</a>
+            <a href="{% url 'why_us' %}">Why Us</a>
+            <a href="{% url 'testimonials' %}">Testimonials</a>
+            <a href="{% url 'careers' %}">Careers</a>
+            <a href="{% url 'insights' %}">Insights</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'pricing' %}">Pricing</a>
+            <a href="{% url 'faqs' %}">FAQs</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="contact-hero">
+    <h1 class="outlined-text">Contact Us</h1>
+    <p class="outlined-text">We’re here to assist you with any inquiries</p>
+</section>
+
+<!-- Contact Info Section -->
+<section class="contact-info">
+    <h2>Get in Touch</h2>
+    <div class="contact-methods">
+        <div class="contact-box">
+            <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp">
+            <p><strong>WhatsApp</strong></p>
+            <a href="https://wa.me/97339591881" target="_blank">Send us a message!</a>
+        </div>
+        <div class="contact-box">
+            <img src="{% static 'images/logomw.png' %}" alt="Email">
+            <p><strong>Email</strong></p>
+            <a href="mailto:mwexpert@gmail.com">Email Us!</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
+</footer>
+
+</body>
+</html>
