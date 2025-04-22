@@ -321,6 +321,7 @@ footer {
         flex: 1 1 100%;
     }
 }
+
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -342,8 +343,3 @@ footer {
         display: block;
     }
 }
-static/
-├── css/
-│   └── careers.css
-└── images/
-    └── careers.jpg
