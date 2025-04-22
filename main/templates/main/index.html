@@ -55,6 +55,38 @@
             font-weight: 500;
         }
 
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                text-align: center;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
         .landing-hero {
             display: flex;
             min-height: 100vh;
@@ -122,8 +154,15 @@
                 <img src="{% static 'images/logomw.png' %}" alt="MW Experts Logo">
                 <span class="logo-text">MW Experts Financial Consulting</span>
             </a>
+
+            <!-- Hamburger Icon (visible on mobile) -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span>&#9776;</span> <!-- Hamburger icon -->
+            </div>
+
+            <!-- Nav Links -->
             <div class="nav-links">
-               <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'about' %}">About</a>
                 <a href="{% url 'services' %}">Services</a>
                 <a href="{% url 'industries' %}">Industries</a>
@@ -156,6 +195,9 @@
     <footer>
         &copy; {{ 2025 }} MW Experts Financial Consulting. All rights reserved.
     </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
