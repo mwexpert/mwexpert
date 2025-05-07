@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY', default='unsafe-default-secret-key')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['mwexpert.com', 'www.mwexpert.com', 'mwexpert-1.onrender.com']
+ALLOWED_HOSTS = ['mwexpert.com', 'www.mwexpert.com']
 
 # Installed apps
 INSTALLED_APPS = [
