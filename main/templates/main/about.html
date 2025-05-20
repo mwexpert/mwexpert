@@ -3,36 +3,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - MW Experts Financial Consulting</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
-        .bordered-section {
-            border: 2px solid #ccc;
-            padding: 20px;
-            margin: 30px auto;
-            border-radius: 10px;
+        .about-container {
             max-width: 1000px;
-            background-color: #fff;
-        }
-
-        .bordered-section h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-family: inherit;
-        }
-
-        .bordered-section p,
-        .bordered-section li {
+            margin: 0 auto;
+            padding: 40px 20px;
+            font-family: 'Arial', sans-serif;
             font-size: 16px;
+            color: #333;
             line-height: 1.6;
-            font-family: inherit;
         }
 
-        .about-bullets {
-            list-style-type: disc;
-            padding-left: 20px;
+        .about-container h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .border-box {
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-bullets li {
+            margin-bottom: 12px;
+        }
+
+        .values-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .image-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-section h2 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .image-section p {
+            font-size: 15px;
+            margin-top: 5px;
+            color: #555;
         }
     </style>
 </head>
@@ -63,7 +93,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section Matching Home -->
+    <!-- Hero Section -->
     <section class="welcome-hero">
         <div class="background-img">
             <img src="{% static 'images/about.jpg' %}" alt="About Background">
@@ -77,38 +107,60 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Content -->
     <div class="about-container">
 
-        <!-- Who We Are Section -->
-        <div class="bordered-section">
+        <!-- Who We Are -->
+        <div class="border-box">
             <h2>Who We Are</h2>
             <ul class="about-bullets">
-                <li>At MW Experts, we are a team of seasoned finance professionals with over 20 years of experience in helping both established companies and startups succeed across various industries—including Retail, Hospitality, Restaurants, General Trading, Real Estate, and Law Firms.</li>
-                <li>We specialize in delivering end-to-end financial solutions, from basic bookkeeping and tax compliance to advanced financial policy development, strategic planning, and implementation.</li>
-                <li>Our services are designed to ensure full compliance with both internal controls and external regulatory requirements, empowering businesses to operate with confidence and clarity.</li>
-                <li>We have successfully supported numerous companies in their financial transformation journeys, helping them optimize resource usage, improve efficiency, and build sustainable financial strategies that drive growth.</li>
-                <li>With a structured team approach—including CFOs, Financial Controllers, Coordinators, and Staff Accountants—MW Experts provides tailored solutions that combine deep industry insight, practical execution, and strategic foresight.</li>
+                <li>At MW Experts, we are a team of seasoned finance professionals with over 20 years of experience...</li>
+                <li>We specialize in delivering end-to-end financial solutions...</li>
+                <li>Our services ensure full compliance with internal controls and regulations...</li>
+                <li>We have supported many companies in financial transformation journeys...</li>
+                <li>Our team includes CFOs, Controllers, Coordinators, and Staff Accountants providing tailored support.</li>
             </ul>
         </div>
 
-        <!-- Purpose Section -->
-        <div class="bordered-section">
+        <!-- Purpose -->
+        <div class="border-box">
             <h2>Our Purpose</h2>
-            <p>At MW Experts, our purpose is to empower businesses with financial clarity, control, and confidence. We are driven by the belief that every business—whether just starting or well established—deserves expert financial support to grow sustainably and operate efficiently.</p>
-            <p>Our goal is simple: to become a trusted financial partner for the businesses we serve—helping them turn numbers into strategies, challenges into opportunities, and visions into results.</p>
+            <p>We empower businesses with financial clarity, control, and confidence...</p>
+            <p>We aim to turn numbers into strategy and help businesses reach their potential.</p>
         </div>
 
-        <!-- Values Section -->
-        <div class="bordered-section">
+        <!-- Values -->
+        <div class="border-box values-section">
             <h2>Our Values</h2>
             <ul>
-                <li><strong>Integrity & Trust:</strong> We build long-term relationships through honesty, transparency, and confidentiality. Our clients trust us with their most critical financial data—and we honor that trust in everything we do.</li>
-                <li><strong>Excellence in Service:</strong> We are committed to delivering precise, timely, and high-quality financial solutions whether it's day-to-day bookkeeping or complex strategic planning.</li>
-                <li><strong>Empowerment Through Knowledge:</strong> We empower entrepreneurs with financial clarity and insights, while also training and mentoring fresh graduates shaping the next generation of finance professionals.</li>
-                <li><strong>Client-Centric Solutions:</strong> Every business is unique. We listen, understand, and tailor our services to meet the specific needs of each client, driving real results and long-term value.</li>
+                <li><strong>Integrity & Trust:</strong> Long-term relationships through transparency.</li>
+                <li><strong>Excellence in Service:</strong> Precise and timely financial solutions.</li>
+                <li><strong>Empowerment Through Knowledge:</strong> We educate clients and train new professionals.</li>
+                <li><strong>Client-Centric Solutions:</strong> Every business receives tailored strategies.</li>
             </ul>
         </div>
+
+        <!-- What Makes Us Different -->
+        <div class="image-section">
+            <h2>What Makes Us Different</h2>
+            <p>We don’t just provide financial services — we create financial partnerships.</p>
+            <img src="{% static 'images/different.jpg' %}" alt="What Makes Us Different">
+        </div>
+
+        <!-- Our Expertise -->
+        <div class="image-section">
+            <h2>Our Expertise</h2>
+            <p>MW Experts serves a diverse range of industries with unmatched precision and insight.</p>
+            <img src="{% static 'images/expertise.jpg' %}" alt="Our Expertise">
+        </div>
+
+        <!-- Our Affiliations -->
+        <div class="image-section">
+            <h2>Our Affiliations</h2>
+            <p>We are proudly affiliated with trusted industry partners and regulatory bodies.</p>
+            <img src="{% static 'images/affiliations.jpg' %}" alt="Our Affiliations">
+        </div>
+
     </div>
 
     <!-- Footer -->
